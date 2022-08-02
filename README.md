@@ -27,7 +27,7 @@ make
 
 ## Deploying
 Due to the simplicity of this XDP program, it does not come with an extra
-loader. You can simple use the `ip` tool for this.
+loader. You can simply use the `ip` tool for this.
 
 To attach the reflector to a device use:
 ```bash
