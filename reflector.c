@@ -13,12 +13,10 @@ int xdp_reflector(struct xdp_md *ctx)
     if (data + sizeof(*eth) > data_end)
         return XDP_DROP;
 
-    #pragma unroll
-    for (int i = 0; i < 6; ++i) {
-        char tmp = eth->h_source[i];
-        eth->h_source[i] = eth->h_dest[i];
-        eth->h_dest[i] = tmp;
-    }
+    __u8 h_tmp[ETH_ALEN];
+    __builtin_memcpy(h_tmp, eth->h_dest, ETH_ALEN);
+    __builtin_memcpy(eth->h_dest, eth->h_source, ETH_ALEN);
+    __builtin_memcpy(eth->h_source, h_tmp, ETH_ALEN);
 
     return XDP_TX;
 }
