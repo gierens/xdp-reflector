@@ -3,6 +3,8 @@ An XDP program to reflect ethernet frames.
 
 ## Performance
 With [MoonGen](https://github.com/emmericp/MoonGen/) I achieved about 1.6 Mpps on an Intel 82599-based NIC.
+I'm not entire sure yet if and how one can achieve the 14 Mpps that would
+max out the 10 Gbps throughput of the card.
 
 ## Dependencies
 Initialize the [libbpf](https://github.com/libbpf/libbpf)
