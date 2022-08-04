@@ -35,7 +35,7 @@ sudo ip link set <DEV> xdpgeneric obj reflector.o sec xdp
 ```
 And to remove it again use:
 ```bash
-sudo ip link set <DEV> xdp off
+sudo ip link set <DEV> xdpgeneric off
 ```
 
 ## Remarks
